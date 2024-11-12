@@ -62,8 +62,9 @@ main > div {
   align-items: center;
   gap: 1.5rem;
   overflow-x: scroll;
-  /* scr: #fe395c; */
+  scroll-snap-type: x mandatory;
 }
+
 /* For browsers that support `scrollbar-*` properties */
 @supports (scrollbar-color: auto) {
   main > div {
@@ -79,6 +80,7 @@ main > div {
 }
 
 .card {
+  scroll-snap-align: start;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -158,7 +160,6 @@ main > div {
   main {
     padding-inline: 2.25rem;
   }
-
   .hero__content__heading {
     font-size: 3rem;
   }
