@@ -1,27 +1,35 @@
 import Star from '../assets/star.svg'
 import Middot from '../assets/middot.svg'
-import Image from '../assets/image.png'
+import PropTypes from 'prop-types';
 
-const Card = () => {
+const Card = ({ img, rating, reviews, country, title, text }) => {
     return (
         <div className="card">
-            <img src={Image} alt="Katie Zaferes" className="card__image" />
+            <img src={img} alt={title} className="card__image" />
             <div className="card__stats">
-                <img src={Star} alt="Star icon" />
-                <span className="stats-rating">5.0
+                <img className='stats-rating-star' src={Star} alt="Star icon" />
+                <span className="stats-rating">{rating}
                 </span>
-                <span className="stats-review">(6)</span>
+                <span className="stats-review">({reviews})</span>
                 <img src={Middot} alt="Middot" />
-                <span className="stats-country">USA</span>
+                <span className="stats-country">{country}</span>
             </div>
             <h2 className="card__title">
-                Life lessons with Katie Zaferes
+                {title}
             </h2>
             <p className="card__text">
-                <span className="text-bold">From $136</span> / person
+                <span className="text-bold">{text}</span> / person
             </p>
         </div>
     )
 }
+Card.propTypes = {
+    img: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    reviews: PropTypes.number.isRequired,
+    country: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+};
 
 export default Card

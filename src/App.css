@@ -54,9 +54,32 @@ body {
 }
 
 main {
-  padding: 1.125rem;
+  padding: 2rem 1.125rem;
 }
+main > div {
+  padding: 0 0rem 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  overflow-x: scroll;
+  /* scr: #fe395c; */
+}
+/* For browsers that support `scrollbar-*` properties */
+@supports (scrollbar-color: auto) {
+  main > div {
+    scrollbar-color: #fe395c white;
+  }
+}
+
+/* Otherwise, use `::-webkit-scrollbar-*` pseudo-elements */
+@supports selector(::-webkit-scrollbar) {
+  main > div::-webkit-scrollbar {
+    background: #fe395c;
+  }
+}
+
 .card {
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -106,11 +129,33 @@ main {
   .hero__content__para {
     font-size: 1.125rem;
   }
+  .card {
+    width: 18rem;
+  }
+  .card__image {
+    height: 250px;
+  }
+  .card__stats {
+    gap: 0.35rem;
+    font-size: 0.875rem;
+  }
+  .stats-rating-star {
+    width: 0.875rem;
+  }
+  .card__title {
+    font-size: 1.25rem;
+  }
+  .card__text {
+    font-size: 0.875rem;
+  }
 }
 
 @media (min-width: 769px) {
   .hero {
     margin-top: 2.5rem;
+    padding-inline: 2.25rem;
+  }
+  main {
     padding-inline: 2.25rem;
   }
 
@@ -120,5 +165,25 @@ main {
 
   .hero__content__para {
     font-size: 1.5rem;
+  }
+
+  .card {
+    width: 24rem;
+  }
+  .card__image {
+    height: 400px;
+  }
+  .card__stats {
+    gap: 0.5rem;
+    font-size: 1rem;
+  }
+  .stats-rating-star {
+    width: 1rem;
+  }
+  .card__title {
+    font-size: 1.5rem;
+  }
+  .card__text {
+    font-size: 1rem;
   }
 }
