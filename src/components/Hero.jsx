@@ -1,4 +1,4 @@
-import HeroImage from '../assets/photo-grid.png';
+import HeroImage from '/assets/photo-grid.png';
 
 const Hero = () => {
     return (
